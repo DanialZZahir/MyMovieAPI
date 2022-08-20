@@ -1,5 +1,5 @@
 const express = require('express')
-const { seed, movies, Users} = require('./models')
+const { seed, movies, users, movieswatched} = require('./models')
 const app = express(); 
 
 app.use(express.json())
@@ -86,7 +86,20 @@ app.get('/users/:id', async (req, res) => {
     res.send(data)
 })
 
-// delete a movie
+app.get('/users/:id/movieswatched', async (req, res) => {
+    const data = await movieswatched.findByPk(req.params.id)
+
+    if (!data) {
+        res.status(404).send(`This user has seen no movies yet`)
+        return
+    }
+    res.send(data)
+})
+
+// watch a movie (IE add a movie to movies watched)
+
+
+// delete a user
 
 app.delete('/users/:id', async (req, res) => {
     const deleted = await users.destroy({

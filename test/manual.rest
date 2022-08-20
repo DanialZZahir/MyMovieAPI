@@ -1,5 +1,38 @@
-GET http://localhost:3000/movies
+
+// ------- MOVIE REQUESTS -------
+
+// GET all movies
+GET http://localhost:3000/movies 
+
+###
+// GET a specific movie by its id number
+
+GET http://localhost:3000/movies/3
 
 ###
 
-GET http://localhost:3000/movies/3
+
+// ------ USER REQUESTS ------
+
+// GET all users
+GET http://localhost:3000/users
+
+###
+
+// GET a specific user by its id number
+GET http://localhost:3000/users/3
+
+###
+
+// PUT request: add a show to the user array if a user watches it 
+// (If a user accesses this endpoint, they have now watched the movie corresponding to this endpoint, 
+// and the movie is pushed to this users MoviesWatched array.
+PUT http://localhost:3000/users
+
+###
+
+// GET shows watched by one user
+GET http://localhost:3000/users/movieswatched
+
+###
+http://localhost:3000/users/3/movieswatched
