@@ -15,7 +15,7 @@ GET http://localhost:3000/movies/3
 // ------ USER REQUESTS ------
 
 // GET all users
-GET http://localhost:3000/users
+GET http://localhost:3000/
 
 ###
 
@@ -27,7 +27,8 @@ GET http://localhost:3000/users/3
 // PUT request: add a show to the user array if a user watches it 
 // (If a user accesses this endpoint, they have now watched the movie corresponding to this endpoint, 
 // and the movie is pushed to this users MoviesWatched array.
-PUT http://localhost:3000/users
+// THEN, a get request can be made to /user/:id/movieswatched, and res.send(data) will return the new arrsy with the movie added.
+PUT http://localhost:3000/users/
 
 ###
 
